@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>Welcome, {{ user.first_name }}!</h1>
+    {% else %}
+        <div class="col-md-4 offset-md-4 bg-dark text-light p-5 rounded mt-3">
+            <h1 class="mb-5">Login</h1>
+            <form class="d-grid" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Email">
+                </div>
+                <div class="mb-5">
+                    <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

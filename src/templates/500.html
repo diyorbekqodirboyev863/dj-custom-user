@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Server Error{% endblock %}
+
+{% block content %}
+    <h1 class="display-1">500 - Server Error</h1>
+    <p>Sorry, something went wrong on our end.</p>
+    <a href="{% url 'home' %}">Return to Home</a>
+{% endblock %}

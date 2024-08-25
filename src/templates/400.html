@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Bad Request{% endblock %}
+
+{% block content %}
+    <h1 class="display-1">400 - Bad Request</h1>
+    <p>Sorry, the request could not be processed. Please check the request and try again.</p>
+    <a href="{% url 'home' %}">Return to Home</a>
+{% endblock %}
